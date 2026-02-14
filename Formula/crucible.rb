@@ -12,7 +12,7 @@ class Crucible < Formula
   depends_on arch: :arm64
 
   url "https://github.com/centient-labs/homebrew-crucible/releases/download/v#{version}/crucible-macos-arm64.tar.gz"
-  sha256 "PLACEHOLDER_SHA256"
+  sha256 "9f6b9a864a12417f6dc4f922f81309840c396c11c815bdfdcf26a7872376b8ca"
 
   def install
     bin.install "crucible"
