@@ -4,7 +4,7 @@
 class Crucible < Formula
   desc "Pipeline execution engine for Claude Code (MCP server)"
   homepage "https://github.com/centient-labs/crucible"
-  version "0.7.0"
+  version "0.7.1"
   # license - TBD
 
   # Currently only macOS ARM64 (Apple Silicon) is supported
@@ -12,7 +12,7 @@ class Crucible < Formula
   depends_on arch: :arm64
 
   url "https://github.com/centient-labs/homebrew-crucible/releases/download/v#{version}/crucible-macos-arm64.tar.gz"
-  sha256 "abfa9b60f33ace8a3c365c5bbdab2126ebd02f55cc2a3b11e6fc305dce63d8f3"
+  sha256 "e9ebb449686af1ecc2da820cd36c73c4fac0c1ee6d8d59c1f7c089f0deac2d7f"
 
   def install
     bin.install "crucible"
