@@ -14,7 +14,7 @@ class Crucible < Formula
   url "https://github.com/centient-labs/homebrew-crucible/releases/download/v#{version}/crucible-macos-arm64.tar.gz"
   # SHA256 is injected by .github/workflows/release.yml at release time.
   # The placeholder value causes Homebrew to reject pre-release installs.
-  sha256 "658f1f997c33aa89fdfa19a5131873454b69eff03384817be3f0b8baa2bcc910"
+  sha256 "d8e727d6ac0d6a4ca605f1cf6e37f1419374740cdff274a65b1a1f894b741545"
 
   def install
     bin.install "crucible"
