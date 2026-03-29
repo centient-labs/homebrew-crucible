@@ -4,7 +4,7 @@
 class Crucible < Formula
   desc "Pipeline execution engine for Claude Code (MCP server)"
   homepage "https://github.com/centient-labs/crucible"
-  version "0.44.15"
+  version "0.44.16"
   # license - TBD
 
   # Currently only macOS ARM64 (Apple Silicon) is supported
@@ -14,7 +14,7 @@ class Crucible < Formula
   url "https://github.com/centient-labs/homebrew-crucible/releases/download/v#{version}/crucible-macos-arm64.tar.gz"
   # SHA256 is injected by .github/workflows/release.yml at release time.
   # The placeholder value causes Homebrew to reject pre-release installs.
-  sha256 "edeaba1908878c1f27639aa1382ab8f80f2a484f42ca605b0c11334770debac2"
+  sha256 "620bb7ec669c9fa0c853d8d48254a08e6984d448d08315bbc08553477378c5d1"
 
   def install
     bin.install "crucible"
