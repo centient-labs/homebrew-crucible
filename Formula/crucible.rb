@@ -4,7 +4,7 @@
 class Crucible < Formula
   desc "Pipeline execution engine for Claude Code (MCP server)"
   homepage "https://github.com/centient-labs/crucible"
-  version "0.44.18"
+  version "0.44.19"
   # license - TBD
 
   # Currently only macOS ARM64 (Apple Silicon) is supported
@@ -14,7 +14,7 @@ class Crucible < Formula
   url "https://github.com/centient-labs/homebrew-crucible/releases/download/v#{version}/crucible-macos-arm64.tar.gz"
   # SHA256 is injected by .github/workflows/release.yml at release time.
   # The placeholder value causes Homebrew to reject pre-release installs.
-  sha256 "5ba85ed8a342acd64a96a32c51a1b1f2cd8432ed2ae3c2d81a8c629fcbc2623a"
+  sha256 "6bc54323f8b8aafa19b34689ea14401bca64500936203c4adab87dd47d49b31a"
 
   def install
     bin.install "crucible"
@@ -31,10 +31,15 @@ class Crucible < Formula
       (share/"crucible"/"templates"/"includes").install Dir["templates/includes/*.{md,sh}"]
     end
 
-    # Install persona definitions
+    # Install persona definitions (flat base personas + subdirectory variants)
     # setup.ts searches: /opt/homebrew/share/crucible/templates/personas
     if File.directory?("templates/personas")
       (share/"crucible"/"templates"/"personas").install Dir["templates/personas/*.md"]
+      # Install subdirectory variants (clerk/, monitor/, deploy-verifier/)
+      Dir["templates/personas/*/"].each do |subdir|
+        dirname = File.basename(subdir)
+        (share/"crucible"/"templates"/"personas"/dirname).install Dir["#{subdir}*.md"]
+      end
     end
 
     # Install project scaffold template (including dotfiles like .agent/, .gitignore)
